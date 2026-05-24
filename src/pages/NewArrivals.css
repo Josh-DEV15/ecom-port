@@ -1,0 +1,133 @@
+.new-arrivals-page {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      to bottom right,
+      #0f0f11,
+      #18181d
+    );
+
+  color: white;
+}
+
+
+
+.arrivals-hero {
+  position: relative;
+
+  height: 55vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.75)
+    ),
+    url("https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop")
+    center/cover no-repeat;
+}
+
+.arrivals-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,0.08),
+      transparent 40%
+    );
+}
+
+.arrivals-content {
+  position: relative;
+  z-index: 2;
+
+  animation: fadeUp 1s ease;
+}
+
+.arrivals-tag {
+  letter-spacing: 4px;
+
+  color: #c7a17a;
+
+  margin-bottom: 20px;
+
+  font-size: 0.9rem;
+}
+
+.arrivals-content h1 {
+  font-size: 5rem;
+
+  margin-bottom: 20px;
+
+  font-weight: 800;
+}
+
+.arrivals-content p {
+  color: rgba(255,255,255,0.75);
+
+  font-size: 1.1rem;
+}
+
+.arrivals-products {
+  padding: 100px 8%;
+}
+
+.arrivals-header {
+  margin-bottom: 60px;
+}
+
+.arrivals-header h2 {
+  font-size: 3rem;
+
+  margin-bottom: 15px;
+}
+
+.arrivals-header p {
+  color: rgba(255,255,255,0.7);
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .arrivals-content h1 {
+    font-size: 3rem;
+  }
+
+  .arrivals-products {
+    padding: 80px 5%;
+  }
+
+  .arrivals-header h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .arrivals-content h1 {
+    font-size: 2.3rem;
+  }
+}

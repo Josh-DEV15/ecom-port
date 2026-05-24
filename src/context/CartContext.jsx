@@ -8,7 +8,6 @@ export const CartContext = createContext();
 
 export function CartProvider({ children }) {
 
-  /* ---------------- CART STATE ---------------- */
 
   const [cart, setCart] = useState(() => {
     const savedCart =
@@ -19,8 +18,6 @@ export function CartProvider({ children }) {
       : [];
   });
 
-  /* ---------------- WISHLIST STATE ---------------- */
-
   const [wishlist, setWishlist] = useState(() => {
     const savedWishlist =
       localStorage.getItem("vaultix-wishlist");
@@ -30,7 +27,6 @@ export function CartProvider({ children }) {
       : [];
   });
 
-  /* ---------------- SAVE TO LOCAL STORAGE ---------------- */
 
   useEffect(() => {
     localStorage.setItem(
@@ -45,8 +41,6 @@ export function CartProvider({ children }) {
       JSON.stringify(wishlist)
     );
   }, [wishlist]);
-
-  /* ---------------- ADD TO CART ---------------- */
 
   const addToCart = (product) => {
 
@@ -80,7 +74,6 @@ export function CartProvider({ children }) {
     }
   };
 
-  /* ---------------- REMOVE FROM CART ---------------- */
 
   const removeFromCart = (id) => {
     const updatedCart = cart.filter(
@@ -90,7 +83,6 @@ export function CartProvider({ children }) {
     setCart(updatedCart);
   };
 
-  /* ---------------- INCREASE QUANTITY ---------------- */
 
   const increaseQuantity = (id) => {
 
@@ -106,7 +98,6 @@ export function CartProvider({ children }) {
     setCart(updatedCart);
   };
 
-  /* ---------------- DECREASE QUANTITY ---------------- */
 
   const decreaseQuantity = (id) => {
 
@@ -124,7 +115,7 @@ export function CartProvider({ children }) {
     setCart(updatedCart);
   };
 
-  /* ---------------- ADD TO WISHLIST ---------------- */
+
 
   const addToWishlist = (product) => {
 
@@ -137,7 +128,7 @@ export function CartProvider({ children }) {
     }
   };
 
-  /* ---------------- REMOVE FROM WISHLIST ---------------- */
+
 
   const removeFromWishlist = (id) => {
 
@@ -148,7 +139,7 @@ export function CartProvider({ children }) {
     setWishlist(updatedWishlist);
   };
 
-  /* ---------------- MOVE TO CART ---------------- */
+
 
   const moveToCart = (product) => {
 
@@ -157,13 +148,10 @@ export function CartProvider({ children }) {
     removeFromWishlist(product.id);
   };
 
-  /* ---------------- CLEAR CART ---------------- */
-
   const clearCart = () => {
     setCart([]);
   };
 
-  /* ---------------- TOTALS ---------------- */
 
   const cartTotal = cart.reduce(
     (total, item) =>
@@ -177,7 +165,6 @@ export function CartProvider({ children }) {
     0
   );
 
-  /* ---------------- PROVIDER ---------------- */
 
   return (
     <CartContext.Provider

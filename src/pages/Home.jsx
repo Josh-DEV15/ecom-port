@@ -1,35 +1,14 @@
-import React, { useState } from "react";
-import products from "../data/products";
-import ProductCard from "../components/ProductCard";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
-function Home({ search }) {
+function Home() {
 
-  /* ---------------- SMOOTH SCROLL ---------------- */
-
-  const scrollToProducts = () => {
-
-    const section =
-      document.getElementById("products");
-
-    section.scrollIntoView({
-      behavior: "smooth"
-    });
-  };
-
-  /* ---------------- FILTER PRODUCTS ---------------- */
-
-  const filteredProducts =
-    products.filter((product) =>
-      product.name
-        .toLowerCase()
-        .includes(search.toLowerCase())
-    );
+  const navigate = useNavigate();
 
   return (
     <div className="home">
-      
-      {/* HERO SECTION */}
+
 
       <section className="hero">
 
@@ -54,65 +33,10 @@ function Home({ search }) {
 
           <button
             className="shop-btn"
-            onClick={scrollToProducts}
+            onClick={() => navigate("/shop")}
           >
             Shop Now
           </button>
-
-        </div>
-
-      </section>
-
-      {/* PRODUCTS SECTION */}
-
-      <section
-        className="products-section"
-        id="products"
-      >
-
-        <div className="section-header">
-
-          <h2>
-            Featured Products
-          </h2>
-
-          <p>
-            Handpicked products crafted for
-            premium experiences.
-          </p>
-
-        </div>
-
-        {/* PRODUCTS GRID */}
-
-        <div className="grid">
-
-          {filteredProducts.length > 0 ? (
-
-            filteredProducts.map((product) => (
-
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
-
-            ))
-
-          ) : (
-
-            <div className="no-results">
-
-              <h3>
-                No products found 😭
-              </h3>
-
-              <p>
-                Try searching for something else.
-              </p>
-
-            </div>
-
-          )}
 
         </div>
 

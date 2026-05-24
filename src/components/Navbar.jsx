@@ -36,7 +36,7 @@ function Navbar({
           to="/"
           className="logo"
         >
-          Vaultix
+          Realix
         </Link>
 
         {/* LINKS */}

@@ -1,5 +1,5 @@
-// Footer.jsx
 
+import { Link } from "react-router-dom";
 import {
   FaInstagram,
   FaTwitter,
@@ -21,7 +21,7 @@ function Footer() {
         <div className="footer-brand">
 
           <h2>
-            Vaultix
+            Realix
           </h2>
 
           <p>
@@ -59,10 +59,18 @@ function Footer() {
 
             <h3>Shop</h3>
 
-            <a href="#">New Arrivals</a>
-            <a href="#">Trending</a>
-            <a href="#">Collections</a>
-            <a href="#">Accessories</a>
+            <Link to="/new-arrivals">
+              New Arrivals
+            </Link>
+            <Link to="/trending">
+              Trending
+            </Link>
+            <Link to="/collections">
+              Collections
+            </Link>
+            <Link to="/accessories">
+              Accessories
+            </Link>
 
           </div>
 
@@ -70,10 +78,18 @@ function Footer() {
 
             <h3>Company</h3>
 
-            <a href="#">About</a>
-            <a href="#">Careers</a>
-            <a href="#">Contact</a>
-            <a href="#">Support</a>
+            <Link to="/about">
+              About
+            </Link>
+            <Link to="/careers">
+              Careers
+            </Link>
+            <Link to="/contact">
+              Contact
+            </Link>
+            <Link to="/support">
+              Support
+            </Link>
 
           </div>
 
@@ -81,10 +97,18 @@ function Footer() {
 
             <h3>Legal</h3>
 
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Shipping</a>
-            <a href="#">Refunds</a>
+            <Link to="/privacy">
+              Privacy Policy
+            </Link>
+            <Link to="/terms">
+              Terms of Service
+            </Link>
+            <Link to="/shipping">
+              Shipping
+            </Link>
+            <Link to="/refunds">
+              Refunds
+            </Link>
 
           </div>
 
@@ -97,7 +121,7 @@ function Footer() {
       <div className="footer-bottom">
 
         <p>
-          © 2026 Vaultix.
+          © 2026 Realix.
           All rights reserved.
         </p>
 
